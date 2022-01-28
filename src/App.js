@@ -1,13 +1,28 @@
 import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Checkbox } from "@mui/material";
 import Save from "@mui/icons-material/Save";
 import Delete from "@mui/icons-material/Delete";
+
+const CheckboxExample = () => {
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <div>
+      <Checkbox
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+      />
+    </div>
+  );
+};
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <CheckboxExample />
         <ButtonGroup variant="contained" color="secondary">
           <Button startIcon={<Save />} color="primary" size="large">
             Save
